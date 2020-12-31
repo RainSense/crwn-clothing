@@ -29,9 +29,6 @@ class SignIn extends React.Component{
         } catch(error) {
             console.log(error);
         }
-
-
-
     }
 
     handleChange = event => {
@@ -45,16 +42,14 @@ class SignIn extends React.Component{
             <div className="sign-in" >
                 <h2>I already have an account</h2>
                 <span>Sign in with your email and password</span>
-
                 <form onSubmit={this.handleSubmit}>
                     <FormInput label= "email"name="email" type= "email" value={this.state.email} handleChange={this.handleChange} required/>
                   
                     <FormInput label= "password"name="password" type="password" value={this.state.password} handleChange={this.handleChange} required/>
-                  
                     
                     <div className='buttons'>
                     <CustomButton type="submit"> Sign in</CustomButton>
-                    <CustomButton onClick={signInWithGoogle} isGoogleSignIn> Sign in with Google </CustomButton>
+                    <CustomButton type="button" onClick={signInWithGoogle} isGoogleSignIn> Sign in with Google </CustomButton>
                     </div>
                 </form>
             </div>
